@@ -1,0 +1,106 @@
+annotated-types==0.7.0
+anyio==4.10.0
+archspec @ file:///croot/archspec_1697725767277/work
+bidict==0.23.1
+blinker==1.9.0
+boltons @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/boltons_1699240838368/work
+Brotli @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/brotli-split_1699237319520/work
+cachetools==5.5.2
+certifi @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_3bzbkiv4h_/croot/certifi_1707229182618/work/certifi
+cffi @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b4nang6w_y/croot/cffi_1700254307954/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click==8.2.1
+conda @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_104cbbdti1/croot/conda_1708369123783/work
+conda-content-trust @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/conda-content-trust_1699283351805/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1702997573971/work/src
+conda-package-handling @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_3dblbw3die/croot/conda-package-handling_1700254361862/work
+conda_package_streaming @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/conda-package-streaming_1699238858289/work
+cryptography @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b1p0q5vizk/croot/cryptography_1702070293829/work
+distro @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/distro_1701803554172/work
+dnspython==2.7.0
+email_validator==2.2.0
+eventlet==0.40.0
+fastapi-cli==0.0.8
+fastapi-cloud-cli==0.1.5
+Flask==3.1.1
+flask-cors==6.0.1
+Flask-SocketIO==5.5.1
+Flask-SQLAlchemy==3.1.1
+google-api-core==2.25.1
+google-api-python-client==2.177.0
+google-auth==2.40.3
+google-auth-httplib2==0.2.0
+googleapis-common-protos==1.70.0
+greenlet==3.2.3
+h11==0.16.0
+httpcore==1.0.9
+httplib2==0.22.0
+httptools==0.6.4
+httpx==0.28.1
+idna @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/idna_1699237644810/work
+itsdangerous==2.2.0
+Jinja2==3.1.6
+joblib==1.5.1
+jsonpatch @ file:///tmp/build/80754af9/jsonpatch_1615747632069/work
+jsonpointer==2.1
+libmambapy @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/mamba-split_1701805498280/work/libmambapy
+markdown-it-py==4.0.0
+MarkupSafe==3.0.2
+mdurl==0.1.2
+menuinst @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_26a7xsau78/croot/menuinst_1706732941263/work
+numpy==2.3.2
+packaging @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/packaging_1699237023876/work
+pandas==2.3.1
+platformdirs @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/platformdirs_1701803010714/work
+pluggy @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/pluggy_1699237243543/work
+proto-plus==1.26.1
+protobuf==6.31.1
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
+pycosat @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/pycosat_1699241479669/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydantic==2.11.7
+pydantic_core==2.33.2
+Pygments==2.19.2
+pyparsing==3.2.3
+PySocks @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/pysocks_1699237568675/work
+python-dateutil==2.9.0.post0
+python-dotenv==1.1.1
+python-engineio==4.12.2
+python-multipart==0.0.20
+python-socketio==5.13.0
+pytz==2025.2
+PyYAML==6.0.2
+requests @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b3tnputioh/croot/requests_1707355573919/work
+rich==14.1.0
+rich-toolkit==0.15.0
+rignore==0.6.4
+rsa==4.9.1
+ruamel.yaml @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/ruamel.yaml_1699241608430/work
+scikit-learn==1.7.1
+scipy==1.16.1
+sentry-sdk==2.35.0
+setuptools==68.2.2
+shellingham==1.5.4
+simple-websocket==1.1.0
+six==1.17.0
+sniffio==1.3.1
+SQLAlchemy==2.0.43
+starlette==0.47.2
+threadpoolctl==3.6.0
+tqdm @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/tqdm_1701805884490/work
+truststore @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/truststore_1701805928787/work
+typer==0.16.0
+typing-inspection==0.4.1
+typing_extensions==4.14.1
+tzdata==2025.2
+uritemplate==4.2.0
+urllib3 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_aff2m3lasf/croot/urllib3_1707770561896/work
+uvicorn==0.35.0
+uvloop==0.21.0
+watchfiles==1.1.0
+websockets==15.0.1
+Werkzeug==3.1.3
+wheel==0.41.2
+wsproto==1.2.0
+zstandard @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/zstandard_1699238791645/work
