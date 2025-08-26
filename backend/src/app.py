@@ -158,6 +158,31 @@ def createRoom():
                 jsonFile = json.dumps({'success': False, 'error': f'Your password is incorrect, {password}, please re-enter your password'})
                 return jsonFile
 
+@app.route('/resetPassword', methods=['GET', 'POST'])
+@cross_origin()
+def resetPassword():
+    information = request.get_json()
+    username = information['username']
+    firstPass = information['pass1']
+    secondPass = information['pass2']
+    if(firstPass == secondPass):
+
+        salt = secrets.token_hex(8)
+        encoding = hashlib.new('sha256')
+        hexPass = firstPass + salt
+        encoding.update(hexPass.encode())
+        newPass = encoding.hexdigest()
+
+        user = db.session.query(users).filter_by(username=username).update({'password': newPass})
+        # db.session.add(user)
+        db.session.commit()
+
+        jsonFile = json.dumps({'success': True, 'message':'your password has changed'})
+        return jsonFile
+    else:
+        jsonFile = json.dumps({'success': False, 'message': 'password doesnt match'})
+        return jsonFile
+
 
 
 if __name__ == '__main__':

@@ -8,6 +8,9 @@ function Login(){
     const [color, setColor] = useState(false)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [fade, setFade] = useState(false)
+    const [popFade, setPopFade] = useState(false)
+    const [err, setErr] = useState('');
 
     useEffect(() => {
         if(username.length > 0 && password.length > 0){
@@ -34,21 +37,34 @@ function Login(){
                 const errMsg = result.error
                 const popUpSt = errMsg.includes("Your password is incorrect")
                 if(popUpSt){
-                    // check a component for this
+                    setErr(errMsg)
+                    setPopFade(true)
+                    
+                    setTimeout(() => {
+                        setPopFade(false)
+                        setErr('')
+                    }, 3000)
+                } else {
+                    
                 }
             }
             
         } catch(err){
             console.log(err)
         }
-        setUsername('')
-        setPassword('')
+        
+        // setUsername('')
+        // setPassword('')
+    }
+
+    const resetPassword = (e) => {
+        e.preventDefault()
+
     }
 
     const navigate = useNavigate();
 
     const homeScreen = () => {
-        console.log('done')
         navigate('/')
     }
 
@@ -69,6 +85,25 @@ function Login(){
                 <input type='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='password' className='rounded-2xl mx-5 relative top-[50%] border-2'></input>
                 <button className={`${color ? "hover:bg-green-500 hover:outline-green-300" : "hover:bg-red-500 hover:outline-red-300"} duration-300 flex mx-5 relative top-[80%] left-[30%] outline-2 p-2 rounded-2xl`} type='submit'>Login</button>
             </form>
+            </div>
+            {/* reset password */}
+            <div className={` ${fade ? "" : "" } p-2 absolute w-[65%] h-[65%] bg-blue-300 rounded-lg bottom-[45%] left-[55%]
+            `}>
+                <div className='border-2 w-full h-8 flex justify-center mb-2'>
+                    <p>Reset Password</p>
+                </div>
+                <div className='border-2 w-full h-55 flex'>
+                    <form action="" onSubmit={''}>
+                        <label className='flex my-2 ml-2' htmlFor="">Enter New Password</label>
+                        <input type='password' className='border-2 ml-2 rounded-lg'></input>
+                        <label className='flex my-2 ml-2' htmlFor="">Re-Enter New Password</label>
+                        <input type='password' className='border-2 ml-2 rounded-lg'></input>
+                        <button type='submit' className={`cursor-pointer hover:bg-green-500 hover:outline-green-300 duration-300 flex relative left-[40%] top-[5%] outline-2 p-2 rounded-2xl`}>Send</button>
+                    </form>
+                </div>
+            </div>
+            <div className={` ${popFade ? "opacity-100 visible" : "" } opacity-0 invisible duration-300 transition-all absolute w-55 h-24 bg-zinc-300 rounded-lg bottom-[85%] right-[75%]
+            `}> <p className='text-base font-bold text-center'>{err}</p>
             </div>
         </div>
     )
