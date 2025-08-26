@@ -56,7 +56,8 @@ class rooms(db.Model):
 @app.route('/')
 @cross_origin()
 def check():
-    return 'Flask is working'
+    jsonFile = json.dumps({'success': True, 'message': 'done'})
+    return jsonFile
 
 #registering the user into db
 @app.route('/register', methods=['GET','POST'])
@@ -112,8 +113,10 @@ def loginDetails():
                 return jsonFile
             else:
                 jsonFile = json.dumps({'success': False, 'error': f'Your password is incorrect, {password}, please re-enter your password'})
-                return jsonFile
-    return 'done'
+            return jsonFile
+    else:
+        jsonFile = json.dumps({'success': False, 'error': 'You didnt enter any account information'})
+        return jsonFile
 
 #creating a room
 @app.route('/createRoom', methods=['GET', 'POST'])
