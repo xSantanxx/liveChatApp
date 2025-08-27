@@ -67,22 +67,29 @@ def registerDetails():
     username = information['username']
     password = information['password']
 
-    if username != '' and password != '':
-        salt = secrets.token_hex(8)
-        encoding = hashlib.new('sha256')
-        hexPass = password + salt
-        encoding.update(hexPass.encode())
+    checkUser = db.session.query(users).filter_by(username=username).first()
+    if(checkUser == None):
+        if(password != ''):
+            salt = secrets.token_hex(8)
+            encoding = hashlib.new('sha256')
+            hexPass = password + salt
+            encoding.update(hexPass.encode())
 
-        userDetails = users()
-        userDetails.username = username
-        userDetails.password = encoding.hexdigest()
-        userDetails.uqs = salt
+            userDetails = users()
+            userDetails.username = username
+            userDetails.password = encoding.hexdigest()
+            userDetails.uqs = salt
 
-        db.session.add(userDetails)
-        db.session.commit()
-        return 'done'
+            db.session.add(userDetails)
+            db.session.commit()
+            jsonFile = json.dumps({'success': True, 'message': 'your account has been successfully created'})
+            return jsonFile
+        else:
+            jsonFile = json.dumps({'success': False, 'message':'your password field is empty'})
+            return jsonFile
     else:
-        return 'failed'
+        jsonFile = json.dumps({'success':False, 'message':'this account already exists'})
+        return jsonFile
     
 
 #logining in the user
@@ -166,14 +173,13 @@ def resetPassword():
     firstPass = information['pass1']
     secondPass = information['pass2']
     if(firstPass == secondPass):
-
         salt = secrets.token_hex(8)
         encoding = hashlib.new('sha256')
         hexPass = firstPass + salt
         encoding.update(hexPass.encode())
         newPass = encoding.hexdigest()
 
-        user = db.session.query(users).filter_by(username=username).update({'password': newPass})
+        user = db.session.query(users).filter_by(username=username).update({'password':newPass, 'uqs': salt})
         # db.session.add(user)
         db.session.commit()
 
