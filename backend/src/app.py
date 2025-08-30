@@ -189,6 +189,17 @@ def resetPassword():
         jsonFile = json.dumps({'success': False, 'message': 'password doesnt match'})
         return jsonFile
 
+@app.route('/returnServers', methods=['GET'])
+@cross_origin()
+def returnServers():
+    server = db.session.query(rooms).all()
+    print(server)
+    roomsName = {}
+    for id,room in enumerate(server):
+        print(id, room.name)
+        roomsName[id] = room.name
+    jsonfile = json.dumps({'rooms': roomsName})
+    return jsonfile
 
 
 if __name__ == '__main__':

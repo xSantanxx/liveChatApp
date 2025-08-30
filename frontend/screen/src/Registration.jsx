@@ -20,13 +20,13 @@ function Registration(){
         e.preventDefault()
         const server = import.meta.env.VITE_BACKEND_SERVER_REGISTER
         try{
-            const respone = await fetch(server, {
+            const response = await fetch(server, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username: username, password: password})
             })
 
-            const result = await respone.json()
+            const result = await response.json()
             // const checkStatus = result.success
             const checkMsg = result.message
             setMsg(checkMsg)
